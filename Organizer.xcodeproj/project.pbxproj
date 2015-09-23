@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DCDEF2DB1BB24D6E00E672F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEF2DA1BB24D6E00E672F3 /* AppDelegate.swift */; };
+		DCDEF2DE1BB24D6E00E672F3 /* Organizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCDEF2DC1BB24D6E00E672F3 /* Organizer.xcdatamodeld */; };
+		DCDEF2E01BB24D6E00E672F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCDEF2DF1BB24D6E00E672F3 /* Assets.xcassets */; };
+		DCDEF2E31BB24D6E00E672F3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDEF2E11BB24D6E00E672F3 /* MainMenu.xib */; };
+		DCDEF2EE1BB24D6E00E672F3 /* OrganizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEF2ED1BB24D6E00E672F3 /* OrganizerTests.swift */; };
+		DCDEF2F91BB24D6E00E672F3 /* OrganizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEF2F81BB24D6E00E672F3 /* OrganizerUITests.swift */; };
+		DCDEF3071BB24D9700E672F3 /* NameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEF3061BB24D9700E672F3 /* NameFormatter.swift */; settings = {ASSET_TAGS = (); }; };
+		DCDEF30B1BB2501C00E672F3 /* AGFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEF30A1BB2501C00E672F3 /* AGFile.swift */; settings = {ASSET_TAGS = (); }; };
+		DCDEF30D1BB253F600E672F3 /* AGErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEF30C1BB253F600E672F3 /* AGErrors.swift */; settings = {ASSET_TAGS = (); }; };
+		DCDEF30F1BB25C1000E672F3 /* AGFileFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEF30E1BB25C1000E672F3 /* AGFileFormatter.swift */; settings = {ASSET_TAGS = (); }; };
+		DCDEF3121BB2708700E672F3 /* AGWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEF3101BB2708600E672F3 /* AGWindowController.swift */; settings = {ASSET_TAGS = (); }; };
+		DCDEF3131BB2708700E672F3 /* AGWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDEF3111BB2708700E672F3 /* AGWindowController.xib */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCDEF2EA1BB24D6E00E672F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCDEF2CF1BB24D6E00E672F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCDEF2D61BB24D6E00E672F3;
+			remoteInfo = Organizer;
+		};
+		DCDEF2F51BB24D6E00E672F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCDEF2CF1BB24D6E00E672F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCDEF2D61BB24D6E00E672F3;
+			remoteInfo = Organizer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DCDEF2D71BB24D6E00E672F3 /* Organizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Organizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDEF2DA1BB24D6E00E672F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCDEF2DD1BB24D6E00E672F3 /* Organizer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Organizer.xcdatamodel; sourceTree = "<group>"; };
+		DCDEF2DF1BB24D6E00E672F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCDEF2E21BB24D6E00E672F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DCDEF2E41BB24D6E00E672F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCDEF2E91BB24D6E00E672F3 /* OrganizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrganizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDEF2ED1BB24D6E00E672F3 /* OrganizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizerTests.swift; sourceTree = "<group>"; };
+		DCDEF2EF1BB24D6E00E672F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCDEF2F41BB24D6E00E672F3 /* OrganizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrganizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDEF2F81BB24D6E00E672F3 /* OrganizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizerUITests.swift; sourceTree = "<group>"; };
+		DCDEF2FA1BB24D6E00E672F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCDEF3061BB24D9700E672F3 /* NameFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameFormatter.swift; sourceTree = "<group>"; };
+		DCDEF30A1BB2501C00E672F3 /* AGFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGFile.swift; sourceTree = "<group>"; };
+		DCDEF30C1BB253F600E672F3 /* AGErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGErrors.swift; sourceTree = "<group>"; };
+		DCDEF30E1BB25C1000E672F3 /* AGFileFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGFileFormatter.swift; sourceTree = "<group>"; };
+		DCDEF3101BB2708600E672F3 /* AGWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGWindowController.swift; sourceTree = "<group>"; };
+		DCDEF3111BB2708700E672F3 /* AGWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGWindowController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCDEF2D41BB24D6E00E672F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDEF2E61BB24D6E00E672F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDEF2F11BB24D6E00E672F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCDEF2CE1BB24D6E00E672F3 = {
+			isa = PBXGroup;
+			children = (
+				DCDEF2D91BB24D6E00E672F3 /* Organizer */,
+				DCDEF2EC1BB24D6E00E672F3 /* OrganizerTests */,
+				DCDEF2F71BB24D6E00E672F3 /* OrganizerUITests */,
+				DCDEF2D81BB24D6E00E672F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCDEF2D81BB24D6E00E672F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEF2D71BB24D6E00E672F3 /* Organizer.app */,
+				DCDEF2E91BB24D6E00E672F3 /* OrganizerTests.xctest */,
+				DCDEF2F41BB24D6E00E672F3 /* OrganizerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCDEF2D91BB24D6E00E672F3 /* Organizer */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEF30E1BB25C1000E672F3 /* AGFileFormatter.swift */,
+				DCDEF2DA1BB24D6E00E672F3 /* AppDelegate.swift */,
+				DCDEF3101BB2708600E672F3 /* AGWindowController.swift */,
+				DCDEF3111BB2708700E672F3 /* AGWindowController.xib */,
+				DCDEF3061BB24D9700E672F3 /* NameFormatter.swift */,
+				DCDEF30A1BB2501C00E672F3 /* AGFile.swift */,
+				DCDEF30C1BB253F600E672F3 /* AGErrors.swift */,
+				DCDEF2DF1BB24D6E00E672F3 /* Assets.xcassets */,
+				DCDEF2E11BB24D6E00E672F3 /* MainMenu.xib */,
+				DCDEF2E41BB24D6E00E672F3 /* Info.plist */,
+				DCDEF2DC1BB24D6E00E672F3 /* Organizer.xcdatamodeld */,
+			);
+			path = Organizer;
+			sourceTree = "<group>";
+		};
+		DCDEF2EC1BB24D6E00E672F3 /* OrganizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEF2ED1BB24D6E00E672F3 /* OrganizerTests.swift */,
+				DCDEF2EF1BB24D6E00E672F3 /* Info.plist */,
+			);
+			path = OrganizerTests;
+			sourceTree = "<group>";
+		};
+		DCDEF2F71BB24D6E00E672F3 /* OrganizerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEF2F81BB24D6E00E672F3 /* OrganizerUITests.swift */,
+				DCDEF2FA1BB24D6E00E672F3 /* Info.plist */,
+			);
+			path = OrganizerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCDEF2D61BB24D6E00E672F3 /* Organizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDEF2FD1BB24D6E00E672F3 /* Build configuration list for PBXNativeTarget "Organizer" */;
+			buildPhases = (
+				DCDEF2D31BB24D6E00E672F3 /* Sources */,
+				DCDEF2D41BB24D6E00E672F3 /* Frameworks */,
+				DCDEF2D51BB24D6E00E672F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Organizer;
+			productName = Organizer;
+			productReference = DCDEF2D71BB24D6E00E672F3 /* Organizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCDEF2E81BB24D6E00E672F3 /* OrganizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDEF3001BB24D6E00E672F3 /* Build configuration list for PBXNativeTarget "OrganizerTests" */;
+			buildPhases = (
+				DCDEF2E51BB24D6E00E672F3 /* Sources */,
+				DCDEF2E61BB24D6E00E672F3 /* Frameworks */,
+				DCDEF2E71BB24D6E00E672F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCDEF2EB1BB24D6E00E672F3 /* PBXTargetDependency */,
+			);
+			name = OrganizerTests;
+			productName = OrganizerTests;
+			productReference = DCDEF2E91BB24D6E00E672F3 /* OrganizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DCDEF2F31BB24D6E00E672F3 /* OrganizerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDEF3031BB24D6E00E672F3 /* Build configuration list for PBXNativeTarget "OrganizerUITests" */;
+			buildPhases = (
+				DCDEF2F01BB24D6E00E672F3 /* Sources */,
+				DCDEF2F11BB24D6E00E672F3 /* Frameworks */,
+				DCDEF2F21BB24D6E00E672F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCDEF2F61BB24D6E00E672F3 /* PBXTargetDependency */,
+			);
+			name = OrganizerUITests;
+			productName = OrganizerUITests;
+			productReference = DCDEF2F41BB24D6E00E672F3 /* OrganizerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCDEF2CF1BB24D6E00E672F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Andre Green";
+				TargetAttributes = {
+					DCDEF2D61BB24D6E00E672F3 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					DCDEF2E81BB24D6E00E672F3 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = DCDEF2D61BB24D6E00E672F3;
+					};
+					DCDEF2F31BB24D6E00E672F3 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = DCDEF2D61BB24D6E00E672F3;
+					};
+				};
+			};
+			buildConfigurationList = DCDEF2D21BB24D6E00E672F3 /* Build configuration list for PBXProject "Organizer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCDEF2CE1BB24D6E00E672F3;
+			productRefGroup = DCDEF2D81BB24D6E00E672F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCDEF2D61BB24D6E00E672F3 /* Organizer */,
+				DCDEF2E81BB24D6E00E672F3 /* OrganizerTests */,
+				DCDEF2F31BB24D6E00E672F3 /* OrganizerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCDEF2D51BB24D6E00E672F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDEF2E01BB24D6E00E672F3 /* Assets.xcassets in Resources */,
+				DCDEF2E31BB24D6E00E672F3 /* MainMenu.xib in Resources */,
+				DCDEF3131BB2708700E672F3 /* AGWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDEF2E71BB24D6E00E672F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDEF2F21BB24D6E00E672F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCDEF2D31BB24D6E00E672F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDEF2DB1BB24D6E00E672F3 /* AppDelegate.swift in Sources */,
+				DCDEF3121BB2708700E672F3 /* AGWindowController.swift in Sources */,
+				DCDEF30F1BB25C1000E672F3 /* AGFileFormatter.swift in Sources */,
+				DCDEF2DE1BB24D6E00E672F3 /* Organizer.xcdatamodeld in Sources */,
+				DCDEF30D1BB253F600E672F3 /* AGErrors.swift in Sources */,
+				DCDEF3071BB24D9700E672F3 /* NameFormatter.swift in Sources */,
+				DCDEF30B1BB2501C00E672F3 /* AGFile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDEF2E51BB24D6E00E672F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDEF2EE1BB24D6E00E672F3 /* OrganizerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDEF2F01BB24D6E00E672F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDEF2F91BB24D6E00E672F3 /* OrganizerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCDEF2EB1BB24D6E00E672F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCDEF2D61BB24D6E00E672F3 /* Organizer */;
+			targetProxy = DCDEF2EA1BB24D6E00E672F3 /* PBXContainerItemProxy */;
+		};
+		DCDEF2F61BB24D6E00E672F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCDEF2D61BB24D6E00E672F3 /* Organizer */;
+			targetProxy = DCDEF2F51BB24D6E00E672F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DCDEF2E11BB24D6E00E672F3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCDEF2E21BB24D6E00E672F3 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCDEF2FB1BB24D6E00E672F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCDEF2FC1BB24D6E00E672F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DCDEF2FE1BB24D6E00E672F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Organizer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Greuw.Organizer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DCDEF2FF1BB24D6E00E672F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Organizer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Greuw.Organizer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DCDEF3011BB24D6E00E672F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OrganizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Greuw.OrganizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Organizer.app/Contents/MacOS/Organizer";
+			};
+			name = Debug;
+		};
+		DCDEF3021BB24D6E00E672F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OrganizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Greuw.OrganizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Organizer.app/Contents/MacOS/Organizer";
+			};
+			name = Release;
+		};
+		DCDEF3041BB24D6E00E672F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OrganizerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Greuw.OrganizerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Organizer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DCDEF3051BB24D6E00E672F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OrganizerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Greuw.OrganizerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Organizer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCDEF2D21BB24D6E00E672F3 /* Build configuration list for PBXProject "Organizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDEF2FB1BB24D6E00E672F3 /* Debug */,
+				DCDEF2FC1BB24D6E00E672F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCDEF2FD1BB24D6E00E672F3 /* Build configuration list for PBXNativeTarget "Organizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDEF2FE1BB24D6E00E672F3 /* Debug */,
+				DCDEF2FF1BB24D6E00E672F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DCDEF3001BB24D6E00E672F3 /* Build configuration list for PBXNativeTarget "OrganizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDEF3011BB24D6E00E672F3 /* Debug */,
+				DCDEF3021BB24D6E00E672F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DCDEF3031BB24D6E00E672F3 /* Build configuration list for PBXNativeTarget "OrganizerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDEF3041BB24D6E00E672F3 /* Debug */,
+				DCDEF3051BB24D6E00E672F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DCDEF2DC1BB24D6E00E672F3 /* Organizer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DCDEF2DD1BB24D6E00E672F3 /* Organizer.xcdatamodel */,
+			);
+			currentVersion = DCDEF2DD1BB24D6E00E672F3 /* Organizer.xcdatamodel */;
+			path = Organizer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DCDEF2CF1BB24D6E00E672F3 /* Project object */;
+}
