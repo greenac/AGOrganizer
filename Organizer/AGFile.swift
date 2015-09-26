@@ -9,35 +9,56 @@
 import Foundation
 
 public class AGFile {
-    let fullPath:String
-    var fileName:String?
+    let originalBasePath:String
+    var newBasePath:String
+    var cleanName:String?
+    let originalName:String
+    var newName:String
+    let format:String
+    let originalUrl:NSURL
+    var newUrl:NSURL
+    let date:NSDate
     
-    var format:String?
-    
-    init(path:String, fileName:String?, format:String?) {
-        self.fullPath = path
+    init(orginalName:String, newName:String, originalBasePath:String, newBasePath:String, format:String) {
+        // TODO -- Add error handling for orginalUrl and newUrl
+        self.originalName = orginalName
+        self.newName = newName
+        self.originalBasePath = originalBasePath
+        self.newBasePath = newBasePath
+        self.originalUrl = NSURL(string: self.originalName, relativeToURL: NSURL(string: self.originalBasePath))!
+        self.newUrl = NSURL(string: self.newName, relativeToURL: NSURL(string: self.newBasePath))!
+        self.date = NSDate()
         self.format = format
-        self.fileName = fileName
     }
     
-    convenience init(parameters: [String:String?]) {
-        let path = parameters[AGFileFormatterParams.Path.rawValue]!
-        let name = parameters[AGFileFormatterParams.Name.rawValue]!
-        let format = parameters[AGFileFormatterParams.Format.rawValue]!
-        self.init(path:path!, fileName:name, format:format)
+    convenience init(parameters: [AGFileFormatterParam:String]) {
+        let orginalName = parameters[AGFileFormatterParam.OriginalName]!
+        let newName = parameters[AGFileFormatterParam.NewName]!
+        let originalBasePath = parameters[AGFileFormatterParam.OriginalBasePath]!
+        let newBasePath = parameters[AGFileFormatterParam.NewBasePath]!
+        let format = parameters[AGFileFormatterParam.Format]!
+        self.init(
+            orginalName: orginalName,
+            newName: newName,
+            originalBasePath: originalBasePath,
+            newBasePath: newBasePath,
+            format: format
+        )
     }
     
-    public func lowerCaseName() -> String? {
-        if self.fileName == nil {
-            return self.fileName
-        }
-        
-        return self.fileName!.lowercaseString
+    public func lowerCaseOriginalName() -> String {
+        return self.originalName.lowercaseString
+    }
+    
+    public func fullOriginalPath() -> String {
+        return self.originalUrl.absoluteString
+    }
+    
+    public func fullNewPath() -> String {
+        return self.newUrl.absoluteString
     }
     
     public func description() -> String {
-        let name = self.fileName == nil ? "No name" : self.fileName!
-        let format = self.format == nil ? "No format" : self.format!
-        return "name: \(name) format: \(format) path: \(self.fullPath)"
+        return "orginal file path: \(self.fullOriginalPath()) new file path: \(self.fullNewPath())"
     }
 }

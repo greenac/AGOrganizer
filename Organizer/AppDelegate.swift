@@ -11,13 +11,13 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var window: NSWindow!
-
+    //@IBOutlet weak var window: NSWindow!
+    var windowController:AGWindowController?
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         let windowController = AGWindowController()
         windowController.showWindow(self)
-        //self.window.windowController = windowController
+        self.windowController = windowController
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

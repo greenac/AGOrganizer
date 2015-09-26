@@ -11,4 +11,10 @@ import Foundation
 enum AGError: ErrorType {
     case InvalidFilePath
     case FileFormatNotSupported
+    case PathNotADirectory
+    case FileHasNoFormat
+    case InvalidFileParameter
+    case IndexOutOfBounds
+    case FailedToCreateFile
+    case InvalidName
 }
