@@ -8,24 +8,28 @@
 
 import Foundation
 
-public enum AGNameParams: String {
+public enum AGNameParams: String
+{
     case FirstName = "FirstName"
     case LastName = "LastName"
 }
 
-public struct AGName {
+public struct AGName
+{
     let rawName:String
     let firstName:String?
     let lastName:String?
     
-    init(dirName:String) throws {
+    init(dirName:String) throws
+    {
         self.rawName = dirName
         let names = try parseNames(dirName)
         self.firstName = names[AGNameParams.FirstName]!
         self.lastName = names[AGNameParams.LastName]!
     }
     
-    public func fullName() -> String? {
+    public func fullName() -> String?
+    {
         var name = ""
         if self.firstName == nil {
             return nil
@@ -39,9 +43,24 @@ public struct AGName {
         
         return name
     }
+    
+    public func fullNameWithUnderscore() -> String?
+    {
+        if let fullName = self.fullName() {
+            let parts = fullName.componentsSeparatedByString(" ")
+            if parts.count == 1 {
+                return parts[0]
+            }
+            
+            return parts[0] + "_" + parts[1]
+        }
+        
+        return nil
+    }
 }
 
-private func parseNames(rawName:String) throws -> [AGNameParams: String?] {
+private func parseNames(rawName:String) throws -> [AGNameParams: String?]
+{
     let parts = rawName.componentsSeparatedByString("_")
     if parts.count == 0 {
         throw AGError.InvalidName

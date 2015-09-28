@@ -8,18 +8,41 @@
 
 import Cocoa
 
-class AGWindowController: NSWindowController {
-
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        self.test3()
-    }
+class AGWindowController: NSWindowController
+{
+    @IBOutlet weak var tableView: NSTableView!
+    
+    var unknownDataSourceAndDelegate:AGUnknownDataSourceAndDelegate?
     
     override var windowNibName:String? {
         return "AGWindowController"
     }
     
-    func test1() {
+    
+    override init(window: NSWindow?)
+    {
+        super.init(window: window)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    override func windowDidLoad()
+    {
+        super.windowDidLoad()
+        self.unknownDataSourceAndDelegate = AGUnknownDataSourceAndDelegate(tableView: self.tableView, data: self.test3()!)
+        if let files = self.test3() {
+            self.unknownDataSourceAndDelegate = AGUnknownDataSourceAndDelegate(tableView: self.tableView, data: files)
+            self.tableView.reloadData()
+        }
+    }
+    
+    
+    
+    func test1()
+    {
         let basePath = "/Users/agreen/Desktop/t1"
         let newBasePath = "/Users/agreen/Desktop/t2"
         let fileFormatter = AGFileFormatter()
@@ -27,16 +50,17 @@ class AGWindowController: NSWindowController {
         do {
             let dirs = try osInterface.filesForDirectory(basePath)
             for dir in dirs {
-                if let orginalDirPath = fileFormatter.urlString([basePath, dir]),
-                let newDirPath = fileFormatter.urlString([newBasePath, dir]){
+                if let orginalDirPath = osInterface.urlStringFromParts([basePath, dir]),
+                let newDirPath = osInterface.urlStringFromParts([newBasePath, dir]) {
                     let files = try osInterface.filesForDirectory(orginalDirPath)
-                    for file in files {
-                        let file = try fileFormatter.createFile(
+                    for (index, file) in files.enumerate() {
+                        let file = fileFormatter.createFile(
                             file,
                             originalBasePath: orginalDirPath,
-                            newBasePath: newDirPath
+                            newBasePath: newDirPath,
+                            index: index
                         )
-                        print("created file: \(file!.description())")
+                        print("created file: \(file.description())")
                     }
                 } else {
                     throw AGError.InvalidFilePath
@@ -55,20 +79,22 @@ class AGWindowController: NSWindowController {
         }
     }
     
-    func test2() {
+    func test2()
+    {
         let basePath = "/Users/agreen/Desktop/t1/capri_cavanni"
         let newBasePath = "/Users/agreen/Desktop/t2/capri_cavanni"
         let fileFormatter = AGFileFormatter()
         let osInterface = AGOSInterface()
         do {
             let files = try osInterface.filesForDirectory(basePath)
-            for file in files {
-                let file = try fileFormatter.createFile(
+            for (index, file) in files.enumerate() {
+                let file = fileFormatter.createFile(
                     file,
                     originalBasePath: basePath,
-                    newBasePath: newBasePath
+                    newBasePath: newBasePath,
+                    index: index
                 )
-                print("created file: \(file!.description())")
+                print("created file: \(file.description())")
             }
         } catch AGError.FileHasNoFormat {
             print("Error: file has no format")
@@ -83,20 +109,30 @@ class AGWindowController: NSWindowController {
         }
     }
     
-    func test3() {
-        let sourceDirs = [
-            "/Volumes/Charlie/.p",
-            "/Volumes/Charlie/.p/finished",
-            "/Volumes/Echo/.p",
-            "/Volumes/Echo/.p/finished"
-        ]
-        let target = "/Users/agreen/.stage/finished"
-        let unknown = AGUnknownFiles(sourceDirs: sourceDirs, targetDirectory: target)
+    func test3() -> [AGFile]?
+    {
+//        let sourceDirs = [
+//            "/Volumes/Charlie/.p",
+//            "/Volumes/Charlie/.p/finished",
+//            "/Volumes/Echo/.p",
+//            "/Volumes/Echo/.p/finished",
+//            "/Users/agreen/.stage/finished/organized"
+//        ]
+        
+        
+        let target = "/Users/agreen/.stage"
+        let unknown = AGUnknownFiles(sourceDirs: nil, targetDirectory: target)
         do {
-            try unknown.getUnknownFiles()
+            let unknownFiles = try unknown.getUnknownFiles()
+            for unknownFile in unknownFiles {
+                print("File: \(unknownFile.description())")
+            }
+            unknown.saveNames()
+            return unknownFiles
         } catch {
             print("Error: getting files")
         }
         
+        return nil
     }
 }

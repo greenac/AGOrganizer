@@ -9,7 +9,8 @@
 import Foundation
 
 extension String {
-    func hasCharacterAtIndex(character:Character, index:Int) throws -> Bool {
+    func hasCharacterAtIndex(character:Character, index:Int) throws -> Bool
+    {
         let characters = Array(self.characters)
         if index >= characters.count {
             throw AGError.IndexOutOfBounds
