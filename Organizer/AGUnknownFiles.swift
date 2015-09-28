@@ -8,18 +8,28 @@
 
 import Foundation
 
-public struct AGUnknownFiles {
-    let sourceDirs:[String]
+public struct AGUnknownFiles
+{
     let names:AGNames
+    let sourceDirs:[String]?
     let targetDir: String
+    let filesToIgnore:Set<String> = [
+        ".DS_Store",
+        "torrents_finished",
+        "torrents_in_progress",
+        "finished",
+        "organized"
+    ]
     
-    init(sourceDirs:[String], targetDirectory:String) {
+    init(sourceDirs:[String]?, targetDirectory:String)
+    {
         self.sourceDirs = sourceDirs
         self.targetDir = targetDirectory
         self.names = AGNames(sourceDirectories: sourceDirs)
     }
     
-    private func setup() -> Bool {
+    private func setup() -> Bool
+    {
         var success = false
         do {
             try self.names.getNames()
@@ -33,32 +43,41 @@ public struct AGUnknownFiles {
         return success
     }
     
-    public func getUnknownFiles() throws -> [String]? {
+    public func getUnknownFiles() throws -> [AGFile]
+    {
         let osInterface = AGOSInterface()
         var files:[String]?
-    
-        if try osInterface.isDirectory(self.targetDir) {
-            files = try? osInterface.filesForDirectory(self.targetDir)
-        }
-    
-        if files != nil {
-            let unknownFiles = try self.filesNotInNames(files!)
-            return unknownFiles
-        }
+        var agFiles = [AGFile]()
         
-        return nil
+        if try osInterface.isDirectory(self.targetDir) {
+            let fileFormatter = AGFileFormatter()
+            files = try? osInterface.filesForDirectory(self.targetDir)
+            for (index, file) in files!.enumerate() where !self.filesToIgnore.contains(file) {
+                let agFile = fileFormatter.createFile(
+                    file,
+                    originalBasePath: self.targetDir,
+                    newBasePath: nil,
+                    index: index
+                )
+                agFiles.append(agFile)
+            }
+        }
+    
+        let unknownFiles = try self.filesNotInNames(agFiles)
+        return unknownFiles
     }
 
-    private func filesNotInNames(files:[String]) throws -> [String] {
+    private func filesNotInNames(files:[AGFile]) throws -> [AGFile]
+    {
         try self.names.getNames()
-        var unknownFiles = [String]()
+        var unknownFiles = [AGFile]()
         for file in files {
-            let lowercaseFile = file.lowercaseString
             var isUnknownFile = true
+            let fileName = file.lowerCaseOriginalName()
             for name in self.names.names {
-                if (lowercaseFile.rangeOfString(name.firstName!) != nil &&
+                if (fileName.rangeOfString(name.firstName!) != nil &&
                     name.lastName != nil &&
-                    lowercaseFile.rangeOfString(name.lastName!) != nil) {
+                    fileName.rangeOfString(name.lastName!) != nil) {
                         isUnknownFile = false
                         break
                 }
@@ -70,5 +89,10 @@ public struct AGUnknownFiles {
         }
         
         return unknownFiles
+    }
+    
+    public func saveNames()
+    {
+        self.names.saveNames()
     }
 }

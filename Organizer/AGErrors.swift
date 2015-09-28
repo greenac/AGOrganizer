@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum AGError: ErrorType {
+enum AGError: ErrorType
+{
     case InvalidFilePath
     case FileFormatNotSupported
     case PathNotADirectory

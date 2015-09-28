@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DC00BF8D1BB3503F001ED125 /* AGStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00BF8C1BB3503F001ED125 /* AGStringExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		DC72354D1BB8ED4A00A7358D /* AGUnknownDataSourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC72354C1BB8ED4A00A7358D /* AGUnknownDataSourceAndDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		DCDA25741BB5F855004C0A55 /* AGNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA25731BB5F855004C0A55 /* AGNames.swift */; settings = {ASSET_TAGS = (); }; };
 		DCDA25761BB5F8AF004C0A55 /* AGName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA25751BB5F8AF004C0A55 /* AGName.swift */; settings = {ASSET_TAGS = (); }; };
 		DCDA25781BB64F83004C0A55 /* AGUnknownFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA25771BB64F83004C0A55 /* AGUnknownFiles.swift */; settings = {ASSET_TAGS = (); }; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		DC00BF8C1BB3503F001ED125 /* AGStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGStringExtension.swift; sourceTree = "<group>"; };
+		DC72354C1BB8ED4A00A7358D /* AGUnknownDataSourceAndDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGUnknownDataSourceAndDelegate.swift; sourceTree = "<group>"; };
 		DCDA25731BB5F855004C0A55 /* AGNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNames.swift; sourceTree = "<group>"; };
 		DCDA25751BB5F8AF004C0A55 /* AGName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGName.swift; sourceTree = "<group>"; };
 		DCDA25771BB64F83004C0A55 /* AGUnknownFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGUnknownFiles.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC72354B1BB8ED1D00A7358D /* DataSourcesAndDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				DC72354C1BB8ED4A00A7358D /* AGUnknownDataSourceAndDelegate.swift */,
+			);
+			name = DataSourcesAndDelegates;
+			sourceTree = "<group>";
+		};
 		DCDEF2CE1BB24D6E00E672F3 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		DCDEF2D91BB24D6E00E672F3 /* Organizer */ = {
 			isa = PBXGroup;
 			children = (
+				DC72354B1BB8ED1D00A7358D /* DataSourcesAndDelegates */,
 				DCDEF30E1BB25C1000E672F3 /* AGFileFormatter.swift */,
 				DC00BF8C1BB3503F001ED125 /* AGStringExtension.swift */,
 				DCDEF2DA1BB24D6E00E672F3 /* AppDelegate.swift */,
@@ -289,6 +300,7 @@
 				DCDA25741BB5F855004C0A55 /* AGNames.swift in Sources */,
 				DCDEF2DB1BB24D6E00E672F3 /* AppDelegate.swift in Sources */,
 				DCDEF3151BB2D38700E672F3 /* AGOSInterface.swift in Sources */,
+				DC72354D1BB8ED4A00A7358D /* AGUnknownDataSourceAndDelegate.swift in Sources */,
 				DCDEF3121BB2708700E672F3 /* AGWindowController.swift in Sources */,
 				DCDEF30F1BB25C1000E672F3 /* AGFileFormatter.swift in Sources */,
 				DCDEF2DE1BB24D6E00E672F3 /* Organizer.xcdatamodeld in Sources */,
