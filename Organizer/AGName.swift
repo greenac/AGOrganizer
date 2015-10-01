@@ -57,6 +57,24 @@ public struct AGName
         
         return nil
     }
+    
+    public func containedIn(input:String, checkFirstOnly:Bool) -> Bool
+    {
+        if self.firstName == nil {
+            return false
+        }
+        
+        let lowercaseInput = input.lowercaseString
+        
+        let hasFirstName = lowercaseInput.rangeOfString(self.firstName!) != nil
+        if checkFirstOnly || self.lastName == nil {
+            return hasFirstName
+        } else if hasFirstName == false {
+            return false
+        }
+        
+        return lowercaseInput.rangeOfString(self.lastName!) != nil
+    }
 }
 
 private func parseNames(rawName:String) throws -> [AGNameParams: String?]

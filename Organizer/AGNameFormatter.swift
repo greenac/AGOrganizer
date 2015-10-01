@@ -11,7 +11,7 @@ import Foundation
 public struct AGNameFormatter
 {
     let fileName:String
-    let charsToReplace:Set<String> = ["-", " ", "|", "(", ")", "^", ".", "<", ">", "@", "#", ",", "&"]
+    let charsToReplace:Set<String> = ["-", " ", "|", "(", ")", "^", ".", "<", ">", "@", "#", ",", "&", "[", "]"]
     let replacementChar:Character = "_"
     let isDir: Bool
     

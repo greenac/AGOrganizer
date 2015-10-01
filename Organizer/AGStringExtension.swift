@@ -12,6 +12,10 @@ extension String {
     func hasCharacterAtIndex(character:Character, index:Int) throws -> Bool
     {
         let characters = Array(self.characters)
+        if characters.count == 0 {
+            return false;
+        }
+        
         if index >= characters.count {
             throw AGError.IndexOutOfBounds
         }

@@ -32,15 +32,14 @@ class AGWindowController: NSWindowController
     override func windowDidLoad()
     {
         super.windowDidLoad()
-        self.unknownDataSourceAndDelegate = AGUnknownDataSourceAndDelegate(tableView: self.tableView, data: self.test3()!)
         if let files = self.test3() {
-            self.unknownDataSourceAndDelegate = AGUnknownDataSourceAndDelegate(tableView: self.tableView, data: files)
+            self.unknownDataSourceAndDelegate = AGUnknownDataSourceAndDelegate(tableView: self.tableView, files: files)
             self.tableView.reloadData()
         }
+        
+        self.test4()
     }
-    
-    
-    
+
     func test1()
     {
         let basePath = "/Users/agreen/Desktop/t1"
@@ -125,7 +124,7 @@ class AGWindowController: NSWindowController
         do {
             let unknownFiles = try unknown.getUnknownFiles()
             for unknownFile in unknownFiles {
-                print("File: \(unknownFile.description())")
+                print("File: \(unknownFile.originalName)")
             }
             unknown.saveNames()
             return unknownFiles
@@ -134,5 +133,21 @@ class AGWindowController: NSWindowController
         }
         
         return nil
+    }
+    
+    func test4() {
+        let fileOrganizer = AGFileOrganizer(
+            moveToBasePath: "/Users/agreen/Desktop/t1",
+            moveFromBasePath: "/Users/agreen/.stage/finished",
+            sourceDirs: nil
+        )
+        do {
+            try fileOrganizer.organize()
+            for file in fileOrganizer.agFiles {
+                print("\(file.description())")
+            }
+        } catch {
+            print("Error: in file organizer's organize method")
+        }
     }
 }

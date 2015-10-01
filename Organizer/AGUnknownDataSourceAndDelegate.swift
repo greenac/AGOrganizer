@@ -9,11 +9,11 @@
 import Cocoa
 
 class AGUnknownDataSourceAndDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource {
-    var data:[AGFile]
+    var files:[AGFile]
     let tableView:NSTableView
     
-    init(tableView: NSTableView, data: [AGFile]) {
-        self.data = data
+    init(tableView: NSTableView, files: [AGFile]) {
+        self.files = files
         self.tableView = tableView
         
         super.init()
@@ -23,12 +23,15 @@ class AGUnknownDataSourceAndDelegate: NSObject, NSTableViewDelegate, NSTableView
     }
 
     @objc func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return data.count
+        return self.files.count
     }
     
     @objc func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let view = NSView(frame: NSMakeRect(0, 0, tableView.bounds.width, tableView.rowHeight))
-        view.layer?.backgroundColor = row % 2 == 0 ? NSColor.greenColor().CGColor : NSColor.blueColor().CGColor
-        return view
+        let file = self.files[row]
+        let text = tableColumn?.identifier == "IndexColumn" ? String(file.index!) : file.originalName
+        let cellId = tableColumn?.identifier == "IndexColumn" ? "IndexCell" : "FileNameCell"
+        let cellView = tableView.makeViewWithIdentifier(cellId, owner: self) as! NSTableCellView
+        cellView.textField!.stringValue = text
+        return cellView
     }
 }

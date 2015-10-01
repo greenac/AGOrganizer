@@ -18,4 +18,5 @@ enum AGError: ErrorType
     case IndexOutOfBounds
     case FailedToCreateFile
     case InvalidName
+    case NoNameForFile
 }

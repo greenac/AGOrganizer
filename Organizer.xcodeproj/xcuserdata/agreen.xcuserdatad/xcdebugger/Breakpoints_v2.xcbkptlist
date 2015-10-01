@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Organizer/AGUnknownDataSourceAndDelegate.swift"
-            timestampString = "465115016.415252"
+            filePath = "Organizer/AGWindowController.swift"
+            timestampString = "465360361.136874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "numberOfRowsInTableView(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Organizer/AGUnknownDataSourceAndDelegate.swift"
-            timestampString = "465115019.238448"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "tableView(_:viewForTableColumn:row:)"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "test4()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

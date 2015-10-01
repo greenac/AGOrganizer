@@ -12,23 +12,27 @@ public class AGNames
 {
     let sourceDirs:[String]?
     var names:[AGName]
+    var namesSet:Set<String>
     let namesToExclude: Set<String> = [".DS_Store"]
     init(sourceDirectories: [String]?) {
         self.sourceDirs = sourceDirectories
-        self.names = [AGName]()
+        self.names = []
+        self.namesSet = []
     }
     
     public func getNames() throws
     {
         let osInterface = AGOSInterface()
-        var names = Set<String>()
+        self.names.removeAll()
+        self.namesSet.removeAll()
+        
         if self.sourceDirs == nil {
             if let jsonNames = osInterface.getNamesFromFile() {
                 for dirName in jsonNames {
                     do {
                         let name = try AGName(dirName: dirName)
-                        if let fullName = name.fullName() where !names.contains(fullName) {
-                            names.insert(fullName)
+                        if let fullName = name.fullName() where !self.namesSet.contains(fullName) {
+                            self.namesSet.insert(fullName)
                             self.names.append(name)
                         }
                     } catch AGError.InvalidName {
@@ -44,8 +48,8 @@ public class AGNames
                 for dirName in dirNames where !self.namesToExclude.contains(dirName) {
                     do {
                         let name = try AGName(dirName: dirName)
-                        if let fullName = name.fullName() where !names.contains(fullName) {
-                            names.insert(fullName)
+                        if let fullName = name.fullName() where !self.namesSet.contains(fullName) {
+                            self.namesSet.insert(fullName)
                             self.names.append(name)
                         }
                     } catch AGError.InvalidName {
@@ -87,5 +91,24 @@ public class AGNames
         } catch {
             print("Error: could not save names to disk")
         }
+    }
+    
+    public func nameForFile(fileName:String) throws -> String
+    {
+        var dirName:String?
+        for name in self.names {
+            if let underscoredName = name.fullNameWithUnderscore() where
+                !self.namesToExclude.contains(underscoredName) &&
+                    name.containedIn(fileName, checkFirstOnly: false) {
+                dirName = underscoredName
+                break
+            }
+        }
+        
+        if dirName == nil {
+            throw AGError.NoNameForFile
+        }
+        
+        return dirName!
     }
 }

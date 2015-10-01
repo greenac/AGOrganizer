@@ -16,7 +16,6 @@ public struct AGOSInterface
     init()
     {
         self.fileManager = NSFileManager.defaultManager()
-        
     }
     
     public func isDirectory(path:String) throws -> Bool
@@ -49,6 +48,10 @@ public struct AGOSInterface
     {
         if parts.count == 0 {
             return nil
+        }
+        
+        if parts.count == 1 {
+            return parts.last!
         }
         
         var urlString = ""

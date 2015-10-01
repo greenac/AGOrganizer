@@ -17,7 +17,6 @@ public class AGFile
     var newName:            String?
     let format:             String?
     let originalUrl:        NSURL?
-    var newUrl:             NSURL?
     var index:              Int?
     let date:               NSDate
     let isDir:              Bool
@@ -42,10 +41,6 @@ public class AGFile
         self.format = format
         self.index = index
         self.isDir = isDir
-        
-        if self.newBasePath != nil && self.newName != nil {
-            self.newUrl = NSURL(string: self.newName!, relativeToURL: NSURL(string: self.newBasePath!))
-        }
     }
     
     public func lowerCaseOriginalName() -> String
@@ -67,9 +62,27 @@ public class AGFile
         return self.originalUrl?.absoluteString
     }
     
+    public func newUrl() -> NSURL?
+    {
+        if self.newBasePath != nil && self.newName != nil {
+            return NSURL(string: self.newName!, relativeToURL: NSURL(string: self.newBasePath!))
+        }
+        
+        return nil
+    }
+    
     public func fullNewPath() -> String?
     {
-        return self.newUrl?.absoluteString
+        if let newUrl = self.newUrl() {
+            return newUrl.absoluteString
+        }
+        
+        return nil
+    }
+    
+    public func isMovie() -> Bool
+    {
+        return format != nil
     }
     
     public func description() -> String

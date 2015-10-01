@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC00BF8D1BB3503F001ED125 /* AGStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00BF8C1BB3503F001ED125 /* AGStringExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		DC72354D1BB8ED4A00A7358D /* AGUnknownDataSourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC72354C1BB8ED4A00A7358D /* AGUnknownDataSourceAndDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		DCA97C9C1BBB26B30095BE71 /* AGFileOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA97C9B1BBB26B30095BE71 /* AGFileOrganizer.swift */; settings = {ASSET_TAGS = (); }; };
 		DCDA25741BB5F855004C0A55 /* AGNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA25731BB5F855004C0A55 /* AGNames.swift */; settings = {ASSET_TAGS = (); }; };
 		DCDA25761BB5F8AF004C0A55 /* AGName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA25751BB5F8AF004C0A55 /* AGName.swift */; settings = {ASSET_TAGS = (); }; };
 		DCDA25781BB64F83004C0A55 /* AGUnknownFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA25771BB64F83004C0A55 /* AGUnknownFiles.swift */; settings = {ASSET_TAGS = (); }; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		DC00BF8C1BB3503F001ED125 /* AGStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGStringExtension.swift; sourceTree = "<group>"; };
 		DC72354C1BB8ED4A00A7358D /* AGUnknownDataSourceAndDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGUnknownDataSourceAndDelegate.swift; sourceTree = "<group>"; };
+		DCA97C9B1BBB26B30095BE71 /* AGFileOrganizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGFileOrganizer.swift; sourceTree = "<group>"; };
 		DCDA25731BB5F855004C0A55 /* AGNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNames.swift; sourceTree = "<group>"; };
 		DCDA25751BB5F8AF004C0A55 /* AGName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGName.swift; sourceTree = "<group>"; };
 		DCDA25771BB64F83004C0A55 /* AGUnknownFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGUnknownFiles.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				DCDA25731BB5F855004C0A55 /* AGNames.swift */,
 				DCDA25751BB5F8AF004C0A55 /* AGName.swift */,
 				DCDEF30A1BB2501C00E672F3 /* AGFile.swift */,
+				DCA97C9B1BBB26B30095BE71 /* AGFileOrganizer.swift */,
 				DCDEF30C1BB253F600E672F3 /* AGErrors.swift */,
 				DCDA25771BB64F83004C0A55 /* AGUnknownFiles.swift */,
 				DCDEF3141BB2D38700E672F3 /* AGOSInterface.swift */,
@@ -307,6 +310,7 @@
 				DCDEF30D1BB253F600E672F3 /* AGErrors.swift in Sources */,
 				DCDEF3071BB24D9700E672F3 /* AGNameFormatter.swift in Sources */,
 				DCDEF30B1BB2501C00E672F3 /* AGFile.swift in Sources */,
+				DCA97C9C1BBB26B30095BE71 /* AGFileOrganizer.swift in Sources */,
 				DCDA25781BB64F83004C0A55 /* AGUnknownFiles.swift in Sources */,
 				DC00BF8D1BB3503F001ED125 /* AGStringExtension.swift in Sources */,
 			);
